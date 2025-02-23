@@ -11,6 +11,18 @@ app.get('/', (req, res) => {
 
 });
 
+app.get('/api/cursos', (req, res) => {
+    res.send(JSON.stringify(infoCursos));
+});
+
+app.get('/api/cursos/programacion', (req, res) => {
+    res.send(JSON.stringify(infoCursos.programacion));
+});
+
+app.get('/api/cursos/matematicas', (req, res) => {
+    res.send(JSON.stringify(infoCursos.matematicas));
+});
+
 const PUERTO = process.env.PORT || 3001;
 
 app.listen(PUERTO, () => {
